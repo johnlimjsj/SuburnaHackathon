@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Text, Button, Platform, StyleSheet } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Container from '../../../components/widgets/Container/Container'
+import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
 import HeaderBar from '../../../components/HeaderBar/HeaderBar'
 import s from './styles';
 
@@ -9,13 +9,13 @@ export default class RequestsPage extends Component {
 
   render() {
     return (
-      <Container>
+      <PageContainer>
         <HeaderBar 
           body="Requests"
           navigation={this.props.navigation}/>
 
         <Text> This is a page </Text>
-      </Container>
+      </PageContainer>
     );
   }
 }

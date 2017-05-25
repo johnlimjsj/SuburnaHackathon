@@ -23,7 +23,7 @@ export default class CardDetailsBar extends Component {
       return (
         <View>
           <Text>{name}</Text> 
-          <Text>{price}</Text>              
+          <Text>${price}</Text>              
           <Text> <Icon active name="heart" /> {likes} </Text>
         </View>
       );

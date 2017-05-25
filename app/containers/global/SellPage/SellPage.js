@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import { Button, Text, Platform, StyleSheet } from 'react-native';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Container from '../../../components/widgets/Container/Container'
+import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
 import HeaderBar from '../../../components/HeaderBar/HeaderBar'
 import s from './styles';
 
@@ -9,7 +9,7 @@ export default class SellPage extends Component {
 
   render() {
     return (
-      <Container>
+      <PageContainer>
         <HeaderBar 
           body="Sell Goods & Services"
           navigation={this.props.navigation}/>
@@ -21,7 +21,7 @@ export default class SellPage extends Component {
         <Button 
           title="Nav to login"
           onPress={() => this.props.navigation.navigate('LoginPage')}/>
-      </Container>
+      </PageContainer>
     );
   }
 }

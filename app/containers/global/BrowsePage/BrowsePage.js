@@ -2,7 +2,7 @@ import React, { Component, ViewPropTypes } from 'react';
 import { ScrollView, View, Button, Text, Platform, StyleSheet } from 'react-native';
 import { Left, Body} from 'native-base'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
-import Container from 'SuburnaHackathon/app/components/widgets/Container/Container'
+import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
 import HeaderBar from 'SuburnaHackathon/app/components/HeaderBar/HeaderBar'
 import SearchBar from 'SuburnaHackathon/app/components/widgets/SearchBar/SearchBar'
 import CardImage from 'SuburnaHackathon/app/components/widgets/Cards/CardImage'
@@ -23,9 +23,13 @@ export default class BrowsePage extends Component {
     const src1 = "SuburnaHackathon/app/img/Cards/johnPassportPhoto.png"
     const cards = itemcards
     return (
-      <View >
+      <PageContainer>
         <SearchBar/>
-        <ScrollView style={layout.halfScreen}>
+        <ScrollContainer>
+          <Button
+            onPress={() => this.props.navigation.navigate('ItemPage')}
+            title="Open Photos screen"
+          />     
         <View style={layout.inlineView}>
           {cards.map((card, index) => (
             <CardImage
@@ -35,8 +39,9 @@ export default class BrowsePage extends Component {
               />
           ))}
         </View>
-        </ScrollView>
-      </View>
+
+        </ScrollContainer>
+      </PageContainer>
     );
   }
 }

@@ -1,8 +1,7 @@
 
 import React, { Component, PropTypes } from 'react';
 import {AppRegistry, StyleSheet, Text, View, TouchableHighlight} from 'react-native';
-import DrawerNav from './components/Navigation/DrawerNav';
-import TabNav from './components/Navigation/TabNav';
+import Root from './routes/Root/Root';
 
 export default class CodeSharing extends Component {
   
@@ -14,7 +13,7 @@ export default class CodeSharing extends Component {
 
     return ( 
 
-      <TabNav/>
+      <Root/>
     )
   }
 }

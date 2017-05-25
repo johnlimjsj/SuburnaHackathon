@@ -1,14 +1,13 @@
 
-import BrowsePage from '../../containers/global/BrowsePage/BrowsePage'
-import GroupsPage from '../../containers/global/GroupsPage/GroupsPage'
-import ProfilePage from '../../containers/global/ProfilePage/ProfilePage'
-import SellPage from '../../containers/global/SellPage/SellPage'
-import RequestsPage from '../../containers/global/RequestsPage/RequestsPage'
+import GroupsPage from 'SuburnaHackathon/app/containers/global/GroupsPage/GroupsPage'
+import ProfilePage from 'SuburnaHackathon/app/containers/global/ProfilePage/ProfilePage'
+import SellPage from 'SuburnaHackathon/app/containers/global/SellPage/SellPage'
+import RequestsPage from 'SuburnaHackathon/app/containers/global/RequestsPage/RequestsPage'
+import { BrowseStack} from '../Stacks'
 
-
-const pages = [{
+export const pages = [{
   name: "BrowsePage",
-  screen:BrowsePage, 
+  screen:BrowseStack, 
   label: "Browse",
   icon:"search",
   path: '/',
@@ -37,5 +36,3 @@ const pages = [{
   icon: "account-circle",
   path: '/services',
 }];
-
-module.exports = {pages}

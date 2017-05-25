@@ -23,7 +23,10 @@ const itemcards = [{
 	name: 'item5',
 	price: 19,
 	likes: 8,
-
+}, {	
+	name: 'item5',
+	price: 19,
+	likes: 8,
 }];
 
 
