@@ -129,7 +129,7 @@ export const allGoods = [
 
 
 
-export const serviceCategoryCards = [{
+export const serviceCategories = [{
 	name: 'Housework',
 	src: 'https://facebook.github.io/react/img/logo_og.png',
 }, {

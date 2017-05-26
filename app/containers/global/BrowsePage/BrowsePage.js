@@ -6,7 +6,7 @@ import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/wi
 import SearchBar from 'SuburnaHackathon/app/components/widgets/SearchBar/SearchBar'
 import CardImage from 'SuburnaHackathon/app/components/widgets/Cards/CardImage'
 import CardDetailsBar from 'SuburnaHackathon/app/components/widgets/Cards/CardDetailsBar'
-import {itemCategories, itemCategoryCards, serviceCategoryCards} from './content'
+import {itemCategories, itemCategoryCards, serviceCategories} from './content'
 
 import s from './styles';
 import layout from 'SuburnaHackathon/app/styles/layout'
@@ -22,7 +22,7 @@ export default class BrowsePage extends Component {
     // const src1 = "SuburnaHackathon/app/img/Cards/johnPassportPhoto.png"
     const src1 = "./johnPassportPhoto.png"
     const cards = itemCategories;
-    const servicecards = serviceCategoryCards;
+    const servicecards = serviceCategories;
 
     return (
       <PageContainer>

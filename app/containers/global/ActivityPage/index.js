@@ -18,19 +18,14 @@ class ActivityPage extends Component {
         <ListItem itemDivider>
           <Text>Upcoming Appointments</Text>
         </ListItem>
-
-        <List 
-          dataArray={items}
-          renderRow={(item) =>
-            <ListItem 
-              onPress={() => this.props.navigation.navigate('AppointmentDetailPage', {details: item})}
-            >
+        <List>
+          {items.map((item, index) => (
+            <ListItem onPress={() => this.props.navigation.navigate('AppointmentDetailPage', {details: item})} key={index} >
                 <Left><Text>{item.date} | {item.event} with {item.person}</Text></Left>
-                
                 <Right><Icon name="arrow-forward" /></Right>
             </ListItem>
-              }>
-        </List> 
+          ))}
+        </List>
 
         <ListItem itemDivider>
           <Text>Item Tracking</Text>
@@ -40,16 +35,14 @@ class ActivityPage extends Component {
           <Text>Activity Feed</Text>
         </ListItem>
 
-        <List 
-          dataArray={activities}
-          renderRow={(activity) =>
+        <List>
+          {activities.map((activity, index) => (
             <ListItem>
                 <Left><Text><MaterialIcons name={activity.icon} />  {activity.person} {activity.action}</Text></Left>
-                
                 <Right><Icon name="arrow-forward" /></Right>
             </ListItem>
-              }>
-        </List> 
+          ))}
+        </List>
 
       </PageContainer>
     );

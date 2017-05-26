@@ -4,7 +4,7 @@ import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/wi
 import SearchBar from 'SuburnaHackathon/app/components/widgets/SearchBar/SearchBar'
 import CardImage from 'SuburnaHackathon/app/components/widgets/Cards/CardImage'
 import CardDetailsBar from 'SuburnaHackathon/app/components/widgets/Cards/CardDetailsBar'
-import {allGoods, allServices, serviceCategoryCards} from './content'
+import {allGoods, allServices, serviceCategories} from './content'
 import {getRoutingParams} from 'SuburnaHackathon/app/utils/routing'
 import s from './styles';
 import layout from 'SuburnaHackathon/app/styles/layout'

@@ -37,9 +37,4 @@ export const activities = [{
   action:'offer',
   icon: "attach-money",      
   date: '2w'
-},{
-  person: 'Daniel Seetoh',
-  action:'offer',
-  icon: "attach-money",      
-  date: '2w'
 }];
