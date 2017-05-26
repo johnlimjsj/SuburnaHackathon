@@ -5,11 +5,18 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
 import HeaderBar from '../../../components/HeaderBar/HeaderBar'
 import MyPicker from 'SuburnaHackathon/app/components/widgets/MyPicker'
+import FormItemDetails from 'SuburnaHackathon/app/components/widgets/FormItemDetails'
+import Parent from 'SuburnaHackathon/app/components/widgets/Parent'
 import s from './styles';
+import layout from 'SuburnaHackathon/app/styles/layout'
 import {tabs} from './content'
 import {getRoutingParams} from 'SuburnaHackathon/app/utils/routing'
-import {itemCategories,serviceCategories} from 'SuburnaHackathon/app/containers/global/BrowsePage/content'
 // should be getting this from the redux store
+import {itemCategories,serviceCategories} from 'SuburnaHackathon/app/containers/global/BrowsePage/content'
+
+
+
+const inputs = ["item", "price"];
 
 
 class SellPage extends Component {
@@ -22,17 +29,17 @@ class SellPage extends Component {
 
   };
 
+
   state = {
     activeTab: 'goods',
-    selectedItem: 'goods',
-    results: {
-        items: []
-    }
+    // this should be obtained from redux but hardcode for now
+    item: '',
+    price: '',
   };
 
 
   render() {
-    const {activeTab} = this.state;
+    const {activeTab, item, price} = this.state;
 
     return (
       <PageContainer>   
@@ -66,6 +73,10 @@ class SellPage extends Component {
           icon="md-add-circle" text="Item"
           controls={<TextInput
                       {...this.props} 
+                      ref={(x) => {this.item = x}}
+                      value={this.state.item}
+                      onChangeText={(item) => this.setState({item})}
+                      
                       style={{height: 40, fontSize: 15, width:150, textAlign: 'right'}}
                       placeholder="What are you selling"
                       editable = {true}
@@ -77,6 +88,11 @@ class SellPage extends Component {
           icon="ios-pricetag" text="Price"
           controls={<TextInput
                       {...this.props} 
+                      ref={(x) => {this.price = x}}
+                      value={this.state.price}
+                      onChangeText={(price) => this.setState({price})}
+                      
+
                       style={{height: 40, fontSize: 15, width:150, textAlign: 'right'}}
                       placeholder="Price"
                       editable = {true}
@@ -103,59 +119,65 @@ class SellPage extends Component {
         <ListItem itemDivider>
           <Text>Sharing</Text>
         </ListItem>
+
+        
+
+        
+          <View style={[layout.inlineView, layout.hPadding,  {padding: 10, justifyContent: 'space-between'}]}>
+            <Button onPress={this.clearAllInputs}><Text>Clear All</Text></Button>
+            <Button onPress={this.submitAllInputs}><Text>Submit</Text></Button>
+          </View>
+        
+
         
 
       </PageContainer>
     );
   }
 
+
   onTabPress = (tab) => {
     this.setState({activeTab: tab})
-    console.log("active tab is", tab)
+    console.log(this.state.price)
   };
 
-  onValueChange = (value) => {
-      this.setState({selectedItem : value});
-  }
-}
-
-class FormItemDetails extends Component {
-
-  static propTypes = {  
-    icon:PropTypes.string,
-    text: PropTypes.string,
-    controlDesc: PropTypes.string,
-    controls: PropTypes.object,
-  };
-
-  static defaultProps = {
-
+  onFieldChange = (e) => {
+    this.setState({item: e.target.value})
+    console.log("target", e)
+    // if (field == 'email') {
+    //   this.setState({[field]: e.target.value.trim()});
+    // } else {
+    //   this.setState({[field]: e.target.value});
+    // }
   };
 
 
-  render() {    
-    const {icon, text, controlDesc, controls} = this.props
-
-    return (
-      <View>     
-        <ListItem icon>
-          <Left>
-              <Icon name={icon} />
-          </Left>
-          <Body>
-            <Text>{text}</Text>
-          </Body>
-          <Right>
-            <Text>{controlDesc}</Text>
-            {controls}
-          </Right>
-        </ListItem>
-
-      </View>
-    );
+  submitAllInputs = (e) => {
+    const retVal = this.getAllInputs();
+    this.clearAllInputs();
+    // to parse the input at the server
   }
 
+  getAllInputs = (e) => {
+    const ret = []
+    for(var i=0; i<inputs.length; i++){
+      ret.push(this.state[inputs[i]])
+    }
+    return ret;
+  }
+
+  clearAllInputs = (e) => {
+    console.log("cleared inputs")
+
+    this.setState({["item"]:''})
+    this.setState({["price"]:''})
+
+  }
+
+
 }
+
+
 
 class ServicesFormDetails extends Component {
   

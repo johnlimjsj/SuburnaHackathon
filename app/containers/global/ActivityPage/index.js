@@ -37,7 +37,7 @@ class ActivityPage extends Component {
 
         <List>
           {activities.map((activity, index) => (
-            <ListItem>
+            <ListItem key={index}>
                 <Left><Text><MaterialIcons name={activity.icon} />  {activity.person} {activity.action}</Text></Left>
                 <Right><Icon name="arrow-forward" /></Right>
             </ListItem>

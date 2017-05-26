@@ -8,7 +8,7 @@ To override the default themes, the user must write inline styles in the followi
 
 */
 
-export class ParentWrapper extends Component {
+export default class ParentWrapper extends Component {
 
   static propTypes = {
     childrenStyle: PropTypes.object,

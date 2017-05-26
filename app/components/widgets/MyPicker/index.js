@@ -33,7 +33,7 @@ export default class MyPicker extends Component {
                 selectedValue={this.state.selected}
                 onValueChange={this.onValueChange}>
                 {items.map((item, index)=>(
-                    <Item label={item.name} value={item.name} />
+                    <Item key={index} label={item.name} value={item.name} />
                 ))}
             </Picker>
 		)

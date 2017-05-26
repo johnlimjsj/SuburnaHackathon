@@ -13,4 +13,9 @@ export default StyleSheet.create({
 		// bottom:10,
 
 	},
+
+	hPadding10: {
+		paddingLeft: 10,
+		paddingRight: 10,
+	},
 });
