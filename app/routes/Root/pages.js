@@ -1,9 +1,11 @@
 
-import GroupsPage from 'SuburnaHackathon/app/containers/global/GroupsPage/GroupsPage'
-import ProfilePage from 'SuburnaHackathon/app/containers/global/ProfilePage/ProfilePage'
-import SellPage from 'SuburnaHackathon/app/containers/global/SellPage/SellPage'
-import RequestsPage from 'SuburnaHackathon/app/containers/global/RequestsPage/RequestsPage'
-import { BrowseStack} from '../Stacks'
+
+import { 
+  BrowseStack, 
+  ActivityStack, 
+  SellStack, 
+  RequestsStack, 
+  ProfileStack } from '../Stacks'
 
 export const pages = [{
   name: "BrowsePage",
@@ -12,26 +14,26 @@ export const pages = [{
   icon:"search",
   path: '/',
 }, {
-  name: "GroupsPage",
-  screen:GroupsPage,
-  label: "Groups",
+  name: "ActivityPage",
+  screen:ActivityStack,
+  label: "Activity",
   icon: "group",
-  path: '/login',
+  path: '/activity',
 }, {
   name: "SellPage",
-  screen:SellPage,
+  screen:SellStack,
   label: "Sell",
   icon: "add-circle-outline",
   path: '/login',
 }, {
   name: "RequestsPage",
-  screen:RequestsPage,
+  screen:RequestsStack,
   label: "Requests",
   icon: "check-box",
   path: '/login',
 }, {
   name: "ProfilePage",
-  screen:ProfilePage,
+  screen:ProfileStack,
   label: "Profile",
   icon: "account-circle",
   path: '/services',

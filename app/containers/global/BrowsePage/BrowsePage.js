@@ -1,13 +1,12 @@
 import React, { Component, ViewPropTypes } from 'react';
 import { ScrollView, View, Button, Text, Platform, StyleSheet } from 'react-native';
-import { Left, Body} from 'native-base'
+import { List, ListItem, Left, Body} from 'native-base'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
-import HeaderBar from 'SuburnaHackathon/app/components/HeaderBar/HeaderBar'
 import SearchBar from 'SuburnaHackathon/app/components/widgets/SearchBar/SearchBar'
 import CardImage from 'SuburnaHackathon/app/components/widgets/Cards/CardImage'
 import CardDetailsBar from 'SuburnaHackathon/app/components/widgets/Cards/CardDetailsBar'
-import {itemcards, servicecards} from './content'
+import {itemCategories, itemCategoryCards, serviceCategoryCards} from './content'
 
 import s from './styles';
 import layout from 'SuburnaHackathon/app/styles/layout'
@@ -20,26 +19,43 @@ export default class BrowsePage extends Component {
 
 
   render() {
-    const src1 = "SuburnaHackathon/app/img/Cards/johnPassportPhoto.png"
-    const cards = itemcards
+    // const src1 = "SuburnaHackathon/app/img/Cards/johnPassportPhoto.png"
+    const src1 = "./johnPassportPhoto.png"
+    const cards = itemCategories;
+    const servicecards = serviceCategoryCards;
+
     return (
       <PageContainer>
         <SearchBar/>
-        <ScrollContainer>
-          <Button
-            onPress={() => this.props.navigation.navigate('ItemPage')}
-            title="Open Photos screen"
-          />     
-        <View style={layout.inlineView}>
-          {cards.map((card, index) => (
-            <CardImage
-              key={index}
-              src={src1}
-              bottom={<CardDetailsBar name={card.name} price={card.price} likes={card.likes}/>}
-              />
-          ))}
-        </View>
-
+        <ScrollContainer>   
+          <ListItem itemDivider>
+            <Text>Goods for Sale/Rent</Text>
+          </ListItem>
+          <View style={layout.inlineView}>
+            {cards.map((card, index) => (
+              <CardImage
+                key={index} 
+                width="50%"
+                src={card.src}
+                top={<Text>{card.name}</Text>}
+                onPress={() => this.props.navigation.navigate('ManyItemsPage', { type:'goods', categoryIndex: index })}
+                />
+            ))}
+          </View>
+          <ListItem itemDivider>
+            <Text>Services for Sale</Text>
+          </ListItem>
+          <View style={layout.inlineView}>
+            {servicecards.map((card, index) => (
+              <CardImage
+                key={index} 
+                width="50%"
+                src={card.src}
+                top={<Text>{card.name}</Text>}
+                onPress={() => this.props.navigation.navigate('ManyItemsPage', { type:'services', categoryIndex: index })}
+                />
+            ))}
+          </View>
         </ScrollContainer>
       </PageContainer>
     );

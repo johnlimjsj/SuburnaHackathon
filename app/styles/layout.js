@@ -8,10 +8,9 @@ export default StyleSheet.create({
 		flexWrap: 'wrap', 
 		flexDirection:'row',		
 	},
-	halfScreen:{
-		height:height-420,
+	screenHeightCropView:{
+		height:height-120,
 		// bottom:10,
-		backgroundColor: 'red',
 
 	},
 });

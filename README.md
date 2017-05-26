@@ -12,6 +12,9 @@ react-native run-ios
 npm install native-base --save
 2. navigation
 npm install --save react-navigation
+can use a better navigator: pity i only discovered it later on
+	react-native-router-flux
+ 	https://github.com/aksonov/react-native-router-flux/blob/master/docs/MINI_TUTORIAL.md
 
 2. shoutem
 npm install -g @shoutem/cli

@@ -17,10 +17,11 @@ export default class MenuListItem extends Component {
 
   render() {
     
+
     return (
       <Button
         onPress={() => this.props.navigation.navigate('DrawerOpen')}
-        title="Menu Home"
+        title="dryftugyihuoji"
       />
     );
   }
