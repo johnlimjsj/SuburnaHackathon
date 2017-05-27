@@ -1,15 +1,16 @@
 import React, { Component, PropTypes } from 'react';
 import { Button, Text, Platform, StyleSheet } from 'react-native';
-import { List, ListItem, Left, Body, Icon, Right} from 'native-base'
+import { Card, CardItem, List, ListItem, Left, Body, Icon, Right} from 'native-base'
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import {PageContainer, ScrollContainer} from 'SuburnaHackathon/app/components/widgets/Container'
 import HeaderBar from '../../../components/HeaderBar/HeaderBar'
 import s from './styles';
 import {items, activities} from './content'
 import {getRoutingParams} from 'SuburnaHackathon/app/utils/routing'
-import AppointmentDetailPage from './AppointmentDetailPage'
+// import AppointmentDetailPage from './AppointmentDetailPage'
+import {ParentWrapper} from 'SuburnaHackathon/app/components/widgets/Parent'
 
-class ActivityPage extends Component {
+export default class ActivityPage extends Component {
 
   render() {
     
@@ -48,6 +49,3 @@ class ActivityPage extends Component {
     );
   }
 }
-
-
-module.exports = { ActivityPage, AppointmentDetailPage}

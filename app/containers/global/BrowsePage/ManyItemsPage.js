@@ -9,7 +9,7 @@ import {getRoutingParams} from 'SuburnaHackathon/app/utils/routing'
 import s from './styles';
 import layout from 'SuburnaHackathon/app/styles/layout'
 
-export default class BrowsePage extends Component {
+export default class ManyItemsPage extends Component {
 
   static propTypes = {  
 

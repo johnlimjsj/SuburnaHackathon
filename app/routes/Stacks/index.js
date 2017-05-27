@@ -2,10 +2,11 @@ import React, { Component, PropTypes }  from 'react';
 
 import { StackNavigator, TabNavigator } from 'react-navigation';
 import {BrowsePage, ManyItemsPage, SingleItemPage} from 'SuburnaHackathon/app/containers/global/BrowsePage'
-import {ActivityPage, AppointmentDetailPage} from 'SuburnaHackathon/app/containers/global/ActivityPage'
+import {ActivityPage, AppointmentDetailPage} from 'SuburnaHackathon/app/containers/global/ActivitiesPage'
+// import AppointmentDetailPage from 'SuburnaHackathon/app/containers/global/ActivityPage/AppointmentDetailPage'
 import {ProfilePage} from 'SuburnaHackathon/app/containers/global/ProfilePage'
 import {SellPage} from 'SuburnaHackathon/app/containers/global/SellPage'
-import {RequestsPage} from 'SuburnaHackathon/app/containers/global/RequestsPage'
+import {RequestsPage, NewRequestPage} from 'SuburnaHackathon/app/containers/global/RequestsPage'
 
 export const BrowseStack = StackNavigator({
   Browse: {
@@ -41,24 +42,11 @@ export const ActivityStack = StackNavigator({
   },
   AppointmentDetailPage: {
     screen: AppointmentDetailPage,
-    path: '/',
+    // path: '/details',
     navigationOptions: {
       title: 'Browse',
     },
   },
-  ManyItemsPage: {
-    screen: ManyItemsPage,
-    navigationOptions: {
-      title: 'Many items',
-    },
-  },
-  SingleItemPage: {
-    screen: SingleItemPage,
-    navigationOptions: {
-      title: 'Single item',
-    },
-  },
-
 });
 
 export const SellStack = StackNavigator({
@@ -92,16 +80,10 @@ export const RequestsStack = StackNavigator({
       title: 'My Requests',
     },
   },
-  ManyItemsPage: {
-    screen: ManyItemsPage,
+  NewRequestPage: {
+    screen: NewRequestPage,
     navigationOptions: {
       title: 'Many items',
-    },
-  },
-  SingleItemPage: {
-    screen: SingleItemPage,
-    navigationOptions: {
-      title: 'Single item',
     },
   },
 

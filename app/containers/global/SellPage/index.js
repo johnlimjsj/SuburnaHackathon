@@ -138,17 +138,9 @@ class SellPage extends Component {
 
   onTabPress = (tab) => {
     this.setState({activeTab: tab})
-    console.log(this.state.price)
   };
 
   onFieldChange = (e) => {
-    this.setState({item: e.target.value})
-    console.log("target", e)
-    // if (field == 'email') {
-    //   this.setState({[field]: e.target.value.trim()});
-    // } else {
-    //   this.setState({[field]: e.target.value});
-    // }
   };
 
 
@@ -167,8 +159,6 @@ class SellPage extends Component {
   }
 
   clearAllInputs = (e) => {
-    console.log("cleared inputs")
-
     this.setState({["item"]:''})
     this.setState({["price"]:''})
 

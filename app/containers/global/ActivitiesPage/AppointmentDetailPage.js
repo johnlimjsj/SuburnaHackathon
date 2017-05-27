@@ -14,14 +14,6 @@ import EStyleSheet from 'react-native-extended-stylesheet';
 
 export default class AppointmentDetailPage extends Component {
 
-  static propTypes = {  
-
-  };
-
-  static defaultProps = {
-
-  };
-
   render() {
     const details = getRoutingParams(this.props).details;
 
@@ -38,9 +30,6 @@ export default class AppointmentDetailPage extends Component {
               <Text><MaterialIcons name="phone"/> Tel: {details.phone}</Text>
             </ParentWrapper>
           </CardItem>
-
-          
-
         </ScrollContainer>
       </PageContainer>
     );
